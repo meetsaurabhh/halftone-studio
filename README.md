@@ -6,6 +6,7 @@ contact — plus a dark-mode toggle, scroll animations, and a working contact fo
 with validation.
 
 **Live demo:** https://halftone-studio-pink.vercel.app/
+---
 **Repo:** https://github.com/meetsaurabhh/halftone-studio
 
 ---
