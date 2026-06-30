@@ -5,8 +5,8 @@ developer internship task. It has four sections — hero, services, portfolio, a
 contact — plus a dark-mode toggle, scroll animations, and a working contact form
 with validation.
 
-**Live demo:** _add your Vercel URL here after deploying_
-**Repo:** _add your GitHub URL here_
+**Live demo:** https://halftone-studio-pink.vercel.app/
+**Repo:** https://github.com/meetsaurabhh/halftone-studio
 
 ---
 
@@ -32,7 +32,7 @@ npm install
 npm run dev
 # open http://localhost:3000
 
-# 3. production build (what Vercel runs)
+# 3. production build
 npm run build
 npm start
 ```
@@ -110,5 +110,5 @@ the data is easy to edit in one place.
 1. Push this repo to GitHub.
 2. Import it on [vercel.com](https://vercel.com/new) — it auto-detects Next.js, no
    config needed.
-3. Update the live URL at the top of this README and in `siteUrl` inside
+3. Update the live URL in `siteUrl` inside
    `app/layout.tsx` so the Open Graph tags point at the real domain.
