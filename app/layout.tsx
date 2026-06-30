@@ -6,7 +6,7 @@ import "@fontsource/space-grotesk/700.css";
 import { ThemeProvider } from "@/lib/theme-provider";
 import "./globals.css";
 
-const siteUrl = "https://halftone-studio.vercel.app";
+const siteUrl = "https://halftone-studio-pink.vercel.app/";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
