@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f6f4ef;
+  --surface: #fffdf8;
+  --fg: #16151a;
+  --muted: #6a6862;
+  --line: #e4e0d6;
+  --accent: #d8881f;
+  --clay: #bd4a2c;
+}
+
+.dark {
+  --bg: #121316;
+  --surface: #1a1b1f;
+  --fg: #f4f2ec;
+  --muted: #9b988f;
+  --line: #2a2b30;
+  --accent: #f0a93c;
+  --clay: #e0744a;
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--bg);
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-accent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-[#16150f] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-fg outline-none transition-colors placeholder:text-muted focus:border-accent;
+  }
+}
+
+/* --- Hero halftone signature --------------------------------------------- */
+.halftone-field {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--accent) 1.4px, transparent 1.5px);
+  background-size: 22px 22px;
+  opacity: 0.16;
+  mask-image: radial-gradient(
+    120% 90% at 78% 8%,
+    #000 0%,
+    transparent 62%
+  );
+  -webkit-mask-image: radial-gradient(
+    120% 90% at 78% 8%,
+    #000 0%,
+    transparent 62%
+  );
+  animation: drift 28s linear infinite;
+}
+
+.hero-glow {
+  position: absolute;
+  top: -12rem;
+  right: -8rem;
+  height: 36rem;
+  width: 36rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, var(--accent), transparent 70%);
+  opacity: 0.14;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+@keyframes drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 22px 44px;
+  }
+}
+
+/* --- Hero entrance -------------------------------------------------------- */
+.hero-rise {
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-rise-2 {
+  animation-delay: 0.1s;
+}
+.hero-rise-3 {
+  animation-delay: 0.2s;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .halftone-field,
+  .hero-rise {
+    animation: none;
+  }
+}
